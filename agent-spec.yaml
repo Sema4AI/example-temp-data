@@ -1,0 +1,33 @@
+agent-package:
+  spec-version: v2
+  agents:
+  - name: Temp Data Example
+    description: Uses duckdb for local temporary storage that spans across threads.
+    model:
+      provider: OpenAI
+      name: gpt-4o
+    version: 0.0.1
+    architecture: agent
+    reasoning: disabled
+    runbook: runbook.md
+    action-packages:
+    - name: temp-storage
+      organization: MyActions
+      version: 0.0.1
+      path: MyActions/temp-storage
+      type: folder
+      whitelist: ''
+    knowledge: []
+    metadata:
+      mode: conversational
+  exclude:
+  - ./.git/**
+  - ./.vscode/**
+  - ./devdata/**
+  - ./output/**
+  - ./venv/**
+  - ./.venv/**
+  - ./**/.env
+  - ./**/.DS_Store
+  - ./**/*.pyc
+  - ./*.zip

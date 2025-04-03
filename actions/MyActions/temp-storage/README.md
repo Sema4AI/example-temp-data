@@ -1,0 +1,1 @@
+# Shows how to use duckdb as a temp storage
